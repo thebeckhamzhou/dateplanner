@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date Mate</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+<h1>Date Mate</h1>
+
+<!-- Dropdown menu for locations -->
+<label for="location">Choose a location:</label>
+<select id="location">
+    <option value="Queens">Queens</option>
+    <option value="Manhattan">Manhattan</option>
+</select>
+
+<!-- Dropdown menu for event types -->
+<label for="eventType">Choose an event type:</label>
+<select id="eventType">
+    <option value="Festival">Festival</option>
+    <option value="Party">Party</option>
+</select>
+
+<!-- Text input fields -->
+<input type="text" id="temperature" placeholder="Enter preferred temperature">
+<input type="text" id="budget" placeholder="Enter budget">
+
+<!-- Find Events button -->
+<button onclick="findEvents()">Find Events</button>
+
+<!-- Where results will appear -->
+<div id="results"></div>
+</body>
+</html>
