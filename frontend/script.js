@@ -7,7 +7,7 @@ async function findEvents() {
 
     // 2. Send these to your backend (your partner's server)
     try {
-        const response = await fetch(`https://your-backend-url.com/events?location=${location}&eventType=${eventType}&temperature=${temperature}&budget=${budget}`);
+        const response = await fetch('http://localhost:4567/events?location=Queens&eventType=Festival&temperature=70&budget=100');
         const data = await response.json();
 
         // 3. Display the event info nicely
