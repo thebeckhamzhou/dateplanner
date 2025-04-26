@@ -1,5 +1,5 @@
 async function findEvents() {
-    // 1. Get user inputs test test
+    // 1. Get user inputs
     const location = document.getElementById('location').value;
     const eventType = document.getElementById('eventType').value;
     const temperature = document.getElementById('temperature').value;
