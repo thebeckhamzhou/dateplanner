@@ -36,13 +36,23 @@ public class EventServer {
             String temperature = request.queryParams("temperature");
             String budget = request.queryParams("budget");
 
-            // Example "matching" logic (you can customize this later)
+            // Basic validation for required parameters
+            if (location == null || eventType == null || budget == null) {
+                response.status(400); // Bad request
+                return "Error: Missing required parameters (location, eventType, or budget)";
+            }
+
+            // Process temperature if provided (you can add logic here to filter events by temperature)
+            String temperatureInfo = (temperature != null && !temperature.isEmpty()) ? "Preferred Temperature: " + temperature + "°F" : "No temperature preference";
+
+            // Example "matching" logic (customize as needed)
             Map<String, String> event = new HashMap<>();
             event.put("eventName", "Fun " + eventType + " in " + location);
             event.put("location", location);
             event.put("eventType", eventType);
-            event.put("price", budget != null ? budget : "Unknown");
+            event.put("price", budget);
             event.put("date", "2024-06-15");
+            event.put("temperatureInfo", temperatureInfo);
 
             response.type("application/json");
             return new Gson().toJson(event);

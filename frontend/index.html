@@ -2,36 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Date Mate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC Events</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
-
 <body>
-<h1>Date Mate</h1>
+<h1>Find Events in NYC!</h1>
 
-<!-- Dropdown menu for locations -->
-<label for="location">Choose a location:</label>
-<select id="location">
-    <option value="Queens">Queens</option>
-    <option value="Manhattan">Manhattan</option>
-</select>
+<div class="filters">
+    <label for="type-select">Filter by Type:</label>
+    <select id="type-select">
+        <option value="All">All</option>
+        <option value="Festival">Festival</option>
+        <option value="Street Fair">Street Fair</option>
+        <option value="Concert">Concert</option>
+        <option value="Art Walk">Art Walk</option>
+        <option value="Theater">Theater</option>
+    </select>
 
-<!-- Dropdown menu for event types -->
-<label for="eventType">Choose an event type:</label>
-<select id="eventType">
-    <option value="Festival">Festival</option>
-    <option value="Party">Party</option>
-</select>
+    <label for="price-select">Filter by Price:</label>
+    <select id="price-select">
+        <option value="All">All</option>
+        <option value="$">$ (Cheap)</option>
+        <option value="$$">$$ (Moderate)</option>
+        <option value="$$$">$$$ (Expensive)</option>
+    </select>
 
-<!-- Text input fields -->
-<input type="text" id="temperature" placeholder="Enter preferred temperature">
-<input type="text" id="budget" placeholder="Enter budget">
+    <label for="location-select">Filter by Location:</label>
+    <select id="location-select">
+        <option value="All">All</option>
+        <option value="Manhattan">Manhattan</option>
+        <option value="Queens">Queens</option>
+    </select>
+</div>
 
-<!-- Find Events button -->
-<button onclick="findEvents()">Find Events</button>
+<div id="events-container"></div>
 
-<!-- Where results will appear -->
-<div id="results"></div>
+<script src="script.js"></script>
 </body>
 </html>
